@@ -4,7 +4,6 @@
  */
 #include <iostream>
 
-#include <opencv2/core.hpp>
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
@@ -26,6 +25,14 @@ int main(int argc, char** argv)
         return -1;
     }
     
+    // Applying Gaussian Blur
+    GaussianBlur(src, dst, Size(19,19), 0, 0);
+
+    String window_name = "Gaussian with kernel 3x3"; 
+    namedWindow(window_name);
+
+    imshow(window_name, dst);
+
     std::cout << "Load successful " << std::endl;
     imshow("Input image", src);
     waitKey(0);
