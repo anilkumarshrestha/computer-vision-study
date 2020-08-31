@@ -60,7 +60,7 @@ void GreyScaleHistogram(cv::Mat const& src_img )
     */
 
     cv::imshow("Grayscale Image", gray_img);
-    cv::imshow("Grayscale hist", histImage);
+    cv::imshow("Grayscale Histogram", histImage);
 
 }
 
@@ -107,7 +107,7 @@ void ColorHistogram(cv::Mat const& src_img)
     }
     
     cv::imshow("Original Image", src_img );
-    cv::imshow("Histogram", histImage);
+    cv::imshow("COlor Histogram", histImage);
 
 }
 
@@ -134,10 +134,6 @@ int main( int argc, char** argv )
         help();
         return -1;
     }
-    //vector<Mat> planes;
-
-    //![Split] Split the given image into B, G, and R planes
-    //cv::split( src, planes );
     
     GreyScaleHistogram( src );
 
