@@ -57,8 +57,10 @@ int main( int argc, char** argv )
 }
 ```
 #### Gray Scale Histogram
-First we convert color image to gray scale using `cv::cvtColor(src_img, gray_img, cv::COLOR_BGR2GRAY)` and then calculate the histogram using `cv::calcHist()`.
+First we convert color image to gray scale using `cv::cvtColor(src_img, gray_img, cv::COLOR_BGR2GRAY)` and then calculate the histogram using `cv::calcHist()`. 
 
+
+We pass pointer of the source image `gray_img` to the function `calcHist()` and the result is stored in matrix `hist`. Similarly, we also pass  
 ```
 // Show Grey Scale (Intensity) Histogram
 void GreyScaleHistogram(cv::Mat const& src_img )
