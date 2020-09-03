@@ -41,7 +41,7 @@ int main(int argc, char** argv)
 
     imshow("Original image", src);
     imshow("Gaussian blured image", dst);
-
+    imwrite("BlurResult.png", dst);
     waitKey(0);
 
     return 0;
