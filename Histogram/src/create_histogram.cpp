@@ -4,10 +4,7 @@
  * @author
  */
 
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-
+#include "histogram/core.hpp"
 #include <iostream>
 
 // Show Grey Scale (Intensity) Histogram
@@ -61,7 +58,7 @@ void GreyScaleHistogram(cv::Mat const& src_img )
 
     cv::imshow("Grayscale Image", gray_img);
     cv::imshow("Grayscale Histogram", histImage);
-
+    cv::imwrite("Grayscale.png", histImage );
 }
 
 // show color histogram
@@ -107,39 +104,12 @@ void ColorHistogram(cv::Mat const& src_img)
     }
     
     cv::imshow("Original Image", src_img );
-    cv::imshow("COlor Histogram", histImage);
-
+    cv::imshow("Color Histogram", histImage);
+    cv::imwrite("ColorHistogram.png", histImage);
 }
 
 void help()
 {
     std::cout << "This program shows the histogram of image." << std::endl
               << "To run the program: ./create_histogram <image>" << std::endl;
-}
-
-int main( int argc, char** argv )
-{
-    const char* filename = argv[1];
-    if( argc < 2 )
-    {
-        help();
-        return -1;
-    }
-    
-    cv::Mat src = cv::imread( cv::samples::findFile(filename) );
-    
-    if( src.empty() )
-    {
-        std::cout << "File not found." << std::endl;
-        help();
-        return -1;
-    }
-    
-    GreyScaleHistogram( src );
-
-    ColorHistogram( src );
-    
-    cv::waitKey();
-    
-    return 0;
 }
