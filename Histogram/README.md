@@ -29,9 +29,9 @@ In order to create a color histogram similar approach was taken. The color was s
 
 ### Result
 
-[Grayscale Histogram](img/Grayscale.png)
+![Grayscale Histogram](img/Grayscale.png)
 
-[RGB Histogram](img/ColorHistogram.png)
+![RGB Histogram](img/ColorHistogram.png)
 
 
 ### Resources:
