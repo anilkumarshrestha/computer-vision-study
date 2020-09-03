@@ -29,7 +29,7 @@ int main( int argc, char** argv )
 
     ColorHistogram( src );
     
-    cv::waitKey();
+    cv::waitKey(0);
     
     return 0;
 }

@@ -1,5 +1,5 @@
 /**
- * @file headers.h
+ * @file core.hpp
  * @brief includes all the headers
  * @author
  */

@@ -58,7 +58,7 @@ void GreyScaleHistogram(cv::Mat const& src_img )
 
     cv::imshow("Grayscale Image", gray_img);
     cv::imshow("Grayscale Histogram", histImage);
-
+    cv::imwrite("Grayscale.png", histImage );
 }
 
 // show color histogram
@@ -104,8 +104,8 @@ void ColorHistogram(cv::Mat const& src_img)
     }
     
     cv::imshow("Original Image", src_img );
-    cv::imshow("COlor Histogram", histImage);
-
+    cv::imshow("Color Histogram", histImage);
+    cv::imwrite("ColorHistogram.png", histImage);
 }
 
 void help()
