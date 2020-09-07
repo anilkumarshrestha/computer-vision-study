@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project( Histogram VERSION 0.1 
+project( CannyEdge VERSION 0.1 
     DESCRIPTION "Detects edges in image" 
                     LANGUAGES CXX )
 
