@@ -3,7 +3,9 @@
 Task Definition: Understand edge detection and apply edge detection on image using C++/OpenCV
 
 ## Description
-Edge are locations where there is rapid intensity varation i.e with steep sopes. Mathematically, slope and direction of a surface is defined through gradient:
+Edges are locations where there is rapid intensity varation i.e with steep slopes. Mathematically, slope and direction of a surface is defined through gradient:
+
+!["grad"](resource/grad.png)
 
 
 Magnitude of J gives the rate of increase in particular dirction. Imagine that there is a source of heat in a room then the arrow pointing from low temp to high is the gradient. 
@@ -48,8 +50,8 @@ Zero crossing is a point where sign of function changes. We can consider it as a
 
 ### Usage
 1. Object recognition
-2. image editing
-3. styling image
+2. Image editing
+3. Styling image
 
 
 ## Approach
