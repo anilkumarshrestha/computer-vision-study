@@ -15,26 +15,20 @@ With these operations, a matrix can be transformed into an upper triangular matr
 
 Example:
 
-$`
 x + 3y − 5z=  2 \
 3x + 11y − 9z=  4 \
 −x + y + 6z=  5
 
-`$
 
-$`
 x + 2y + 3z = 2 \
     2y + 6z = -2 \
     4y + z = 7
 
-`$
 
-$`
 x + 2y + 3z = 2 \
      2y + 6z = -2 \
           -11z = 11
 
-`$
 
 using backward substitution,
 z = -1,
