@@ -48,7 +48,8 @@ The program successfully finds the solution.
 
 
 # References
-1. [Lboro.ac.uk](https://learn.lboro.ac.uk/archive/olmp/olmp_resources/pages/workbooks_1_50_jan2008/Workbook30/30_2_gauss_elim.pdf)
+1. [MIT](http://web.mit.edu/18.06/www/Spring17/Gaussian-elimination.pdf)
+2. [Lboro.ac.uk](https://learn.lboro.ac.uk/archive/olmp/olmp_resources/pages/workbooks_1_50_jan2008/Workbook30/30_2_gauss_elim.pdf)
 3. [Wikipedia](https://en.wikipedia.org/wiki/Gaussian_elimination)
   
 
