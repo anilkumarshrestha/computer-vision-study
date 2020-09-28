@@ -1,7 +1,7 @@
 # Canny Edge Detection
 Task Description: Understand and implement Canny Edge Detection Algorithm from scratch using Python
 
-The edge of image contains rich information. Canny Edge Detector is one of the most effective edge detector whose input is the output of Sobel. In a nutshell, it finds the angle and applies threshold to the output of Sobel.
+The edge of the image contains rich information. Canny Edge Detector is one of the most effective edge detectors whose input is the output of Sobel. In a nutshell, it finds the angle and applies the threshold to the output of Sobel.
 
 1. Apply Sobel
 2. Find gradient direction
@@ -10,7 +10,7 @@ The edge of image contains rich information. Canny Edge Detector is one of the m
 
 ## Sobel Filter
 
-$`G_x`$ = 
+$`G_x`$ =
 $`\begin{bmatrix}
 -1 & 0 & +1\\
 -2 & 0 & +2\\
@@ -19,7 +19,7 @@ $`\begin{bmatrix}
 `$
 $`* I`$
 
-$`G_y`$ = 
+$`G_y`$ =
 $`\begin{bmatrix}
 -1 & -2 & -1\\
 0 & 0 & 0\\
@@ -33,22 +33,22 @@ Magnitude:
 $`G = \sqrt{G_x^2 + G_y^2}`$
 
 ## Non-max suppression
-The Non-max suppression algorithm selects high scoring and deletes close-by less confident neighbours. So, ultimately it creates thin edges from the thick edges created by Sobel Filter. 
+The Non-max suppression algorithm selects high scoring and deletes close-by less confident neighbours. So, ultimately it creates thin edges from the thick edges created by Sobel Filter.
 
-In order to implement this we have approaches like rounding the angle and interpolation. 
+In order to implement this we have approaches like rounding the angle and interpolation.
 
 ### Rounding
-Let q be the pixel that we are working on and $`\theta`$ be the angle. Let $`p_1`$, $`p_2, p_3, p_4, p_5, p_6, p_7`$ and $`p_8`$ be the neighbours of $`q`$ in right, right bottom, bottom, left bottom, left, left top, top and top right respectively. Then we can determine q by comparing the value with the neighbour. 
+Let q be the pixel that we are working on and $`\theta`$ be the angle. Let $`p_1`$, $`p_2, p_3, p_4, p_5, p_6, p_7`$ and $`p_8`$ be the neighbours of $`q`$ in right, right bottom, bottom, left bottom, left, left top, top and top right respectively. Then we can determine q by comparing the value with the neighbour.
 
 ![rounding](res/rounding.png)
 
 For example let $`\theta = 20\degree`$, q is compared with $`p_1`$ and $`p_5`$
 
-Then q is suppressed if value at $`q`$ is less than values at $`p_1`$ and $`p_5`$.  
+Then q is suppressed if the value at $`q`$ is less than values at $`p_1`$ and $`p_5`$.  
 
 
 ## Interpolation
-Let us assume the following matrix. Here also we look at the gradient and determine in between which angles does the gradient lie. 
+Let us assume the following matrix. Here also we look at the gradient and determine in between which angles does the gradient lie.
 
 ![interp](res/matrix.png)
 
@@ -59,7 +59,7 @@ Let us suppose we are looking at a pixel value at 1,1. Let $`\theta`$ be between
 This process is carried out in every pixel of the image.
 
 ### Double thresholding
-This is simple using double threshold values and finding strong, weak and non-relevant pixels. 
+This is simple using double threshold values and finding strong, weak and non-relevant pixels.
 - Strong pixels are pixels that have an intensity so high that we are sure they contribute to the final edge.
 - Weak pixels are pixels that have an intensity value that is not enough to be considered as strong ones, but yet not small enough to be considered as non-relevant for the edge detection.
 - Other pixels are considered as non-relevant for the edge.
