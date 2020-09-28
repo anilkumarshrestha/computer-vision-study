@@ -16,14 +16,16 @@ void ImageRotation(cv::Mat& src, cv::Mat& dst, float angle)
    
     // Degree to Rad
     float rad = angle * 3.14/180;
-    
+    float cos_val = cos(rad);
+    float sin_val = sin(rad);
+
     for( int i =0; i < src.cols; i++)
     {
         for( int j = 0; j < src.rows; j++)
         {
             // Translate to origin, then rotate about origin and finally translate back to image center
-            x = ((i - center_x) * cos(rad) + (j - center_y)*sin(rad) + center_x);
-            y = ((i - center_x) * sin(rad) - (j - center_y)*cos(rad) + center_y);
+            x = ((i - center_x) * cos_val - (j - center_y)*sin_val + center_x);
+            y = ((i - center_x) * sin_val + (j - center_y)*cos_val + center_y);
             
             if((x>=0 && x<src.cols) && (y>=0 && y<src.rows))
             {

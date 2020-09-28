@@ -56,9 +56,6 @@ Solution:
 - then linked the file to `pkg-config` by adding following at the end of `~/.zshrc (~/.bashrc for bash) export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"` 
 
 
-## OpenCV modules
-I am still exploring the modules in OpenCV.
-
 
 ## Resources
 
