@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import numpy as np
-import matplotlib.pyplot as plt
 import argparse
 from PIL import Image
 from scipy.ndimage.filters import convolve
@@ -96,5 +95,6 @@ def main():
     merged.save('with_scipy.png')
     merged_conv.save('scratch.png')
     print("Complete.")
+
 if __name__ == "__main__":
     main()
