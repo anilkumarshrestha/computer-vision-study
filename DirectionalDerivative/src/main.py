@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import numpy as np
 import argparse
-from PIL import Image
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
@@ -9,7 +8,10 @@ def rgb2grey(rgb):
     return np.dot(rgb[...,:3], [0.2126, 0.7152, 0.0722])
 
 def directionalDer(img, dir_):
-    '''
+    '''Applies directional derivative
+    :param img: Numpy array
+    :param dir_: Direction
+    :returns: Convolved array
     '''
     if(dir_ == 'x'):
         Gx = np.array([[-1, 0, +1], [-2, 0, +2], [-1, 0, +1]])
@@ -64,7 +66,8 @@ def main():
     x_direction = directionalDer(grey, 'x')
     y_direction = directionalDer(grey, 'y')
     mag = get_magnitude(x_direction, y_direction)
-    
+    mag = normalize(mag)
+
     show(x_direction, 'x_dir.png')
     show(y_direction, 'y_dir.png')
     show(mag, 'mag.png')
