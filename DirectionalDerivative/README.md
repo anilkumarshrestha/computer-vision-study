@@ -17,6 +17,12 @@ Option 2: take discrete derivative
 
 ![linear](res/implement.png)
 
+Since we are applying directional derivative along X and Y axis, it can be considered as gradient. So we have,
+
+![grad](res/grad.png)
+
+
+
 ## Approach
 1. Apply directional derivative $`H_x`$ along X
 2. Apply directional derivative $`H_y`$ along Y
@@ -38,7 +44,7 @@ Option 2: take discrete derivative
  #### Added and normalized
  <img src='result/mag.png' width='300'>
 
-## Reference
+## References
 1. https://www.cs.cornell.edu/courses/cs6670/2011sp/lectures/lec02_filter.pdf
 2. https://www.cs.toronto.edu/~mangas/teaching/320/slides/CSC320L05.pdf
 3. https://www.usna.edu/Users/oceano/raylee/SM223/Ch14_6_Stewart(2016).pdf
