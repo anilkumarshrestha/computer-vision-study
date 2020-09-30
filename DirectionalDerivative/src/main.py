@@ -44,6 +44,9 @@ def convolve2D(img, kernel):
 def get_magnitude(x, y):
     return np.sqrt(np.square(x) + np.square(y))
 
+def get_direction(x, y):
+    return np.arctan(y/x)
+
 def normalize(img):
     img = img/np.max(img)
     return img
@@ -67,10 +70,12 @@ def main():
     y_direction = directionalDer(grey, 'y')
     mag = get_magnitude(x_direction, y_direction)
     mag = normalize(mag)
+    direction = get_direction(x_direction, y_direction)
 
     show(x_direction, 'x_dir.png')
     show(y_direction, 'y_dir.png')
     show(mag, 'mag.png')
-
+    show(direction, 'direction.png')
+    
 if __name__ == '__main__':
     main()
