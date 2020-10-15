@@ -12,7 +12,7 @@ from scipy.stats import mode
 class Kmeans:
     ''' Kmeans class'''
     
-    def __init__(self, n_clusters=10, max_itr=30, rseed=2):
+    def __init__(self, n_clusters=10, max_itr=300, rseed=2):
         ''' Initialization
 
         :param n_clusters: Number of clusters
