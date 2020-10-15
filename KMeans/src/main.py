@@ -12,12 +12,22 @@ from scipy.stats import mode
 class Kmeans:
     ''' Kmeans class'''
     
-    def __init__(self, n_clusters=10, max_itr=300, rseed=2):
+    def __init__(self, n_clusters=10, max_itr=30, rseed=2):
+        ''' Initialization
+
+        :param n_clusters: Number of clusters
+        :param max_itr: Maximum of iterations to perform
+        :param rseed: Random State seed
+        '''
         self.n_clusters = n_clusters
         self.max_itr = max_itr
         self.rseed = rseed
 
     def init_centroids(self, X):
+        '''Initialize random centroid
+        :param X: data
+        :returns: numpy array including Centroids 
+        '''
         np.random.RandomState(self.rseed)
         
         # n_clusters number of Random index to select entroids
@@ -29,7 +39,11 @@ class Kmeans:
         return centroids
 
     def get_distance(self, X, centroids):
-        
+        ''' Calculate distance
+        :param X: data
+        :param centroids: Numpy array
+        :returns: Numpy array having calculated distance between X and centroids
+        '''
         # Initialize zero numpy arrays of dim (60000, 10) 
         # to store distance of each point with respect to each cluster
         distance = np.zeros((X.shape[0], self.n_clusters))
@@ -42,7 +56,11 @@ class Kmeans:
         return distance
 
     def calculate_centroids(self, X, labels):
-        
+        ''' Calculate centroids
+        :param X: data
+        :param labels: Numpy array of labels
+        :returns: Numpy array of centroids
+        '''
         # Initialize centroids of dim (10, 784)
         centroids = np.zeros((self.n_clusters, X.shape[1]))
         for k in range(self.n_clusters):
@@ -56,6 +74,7 @@ class Kmeans:
         return np.argmin(distance, axis=1)
     
     def fit(self, X):
+        ''' Fit the given data'''
         # Initialize centroids to random points
         self.centroids = self.init_centroids(X)
 
@@ -72,11 +91,12 @@ class Kmeans:
                 break
 
     def predict(self, X):
+        ''' Predict data'''
         distance = self.get_distance(X, self.old_centroids)
         return self.get_closest_cluster(distance)
 
 def load_data():
-
+    ''' Load MNIST data from local file'''
     files = ['../data/train-images.idx3-ubyte', '../data/train-labels.idx1-ubyte',
             '../data/t10k-images.idx3-ubyte', '../data/t10k-labels.idx1-ubyte']
     for file_ in files:
@@ -97,6 +117,7 @@ def load_data():
     return X, y, test_X, test_y
 
 def get_labels(n_clusters, clusters, actual_label):
+    ''' Returns labels of data'''
     labels = np.zeros_like(clusters)
     for i in range(n_clusters):
         mask = (clusters == i)
@@ -104,10 +125,15 @@ def get_labels(n_clusters, clusters, actual_label):
     return labels
 
 def accuracy_metric(actual, predicted):
-    correct = 0
-    for i in range(len(actual)):
-        if actual[i] == predicted[i]:
-            correct += 1
+    ''' Finds accuracy '''
+    #correct = 0
+    #for i in range(len(actual)):
+    #    if actual[i] == predicted[i]:
+    #        correct += 1
+    
+    num = np.equal(actual, predicted)
+    # sum the number of True in np array
+    correct = np.sum(num)
     return correct / float(len(actual)) * 100.0
 
 
