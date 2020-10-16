@@ -15,7 +15,7 @@ KMeans is an unsupervised learning algorithm that finds clusters of data based o
 
 Formally, k-means is the task of finding a partition $`S = {S_1, S_2, .. S_k}`$ where $`S`$ satisfies:
 
-$$`argmin \sum_{i=1}^k \sum_{x\in S_i}||x - \mu_i||^2`$$
+$`argmin \sum_{i=1}^k \sum_{x\in S_i}||x - \mu_i||^2`$
 
 ### Algorithm
 ![KMeans algorithm](img/kmeans_algo.png)
