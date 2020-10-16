@@ -95,6 +95,8 @@ class Kmeans:
         distance = self.get_distance(X, self.old_centroids)
         return self.get_closest_cluster(distance)
 
+
+
 def load_data():
     ''' Load MNIST data from local file'''
     files = ['../data/train-images.idx3-ubyte', '../data/train-labels.idx1-ubyte',
