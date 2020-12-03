@@ -8,24 +8,25 @@ Principal Component Analysis (PCA) is a method for reducing dimension of data. A
 
 ### Eigenvalues and eigenvectors
 
-A vector $v$ is an eigenvector of A if transformation of the vector ($Av$) are in the same direction. Thus obtained vector is just the scaled version of the input vector. This scaling factor, $`lambda`$ is the eigenvalue of A.
+A vector $`v`$ is an eigenvector of $`A`$ if transformation of the vector ($`Av`$) are in the same direction. Thus obtained vector is just the scaled version of the input vector. This scaling factor, $`lambda`$ is the eigenvalue of $`A`$.
 
 Mathematically,
+
 $$`Av = \lambda v`$$
 
 ### Covariance
 Standard deviation and variance only operates in 1D. And to measure the similar measure in 2D, we use covariance.
 Mathematically,
 
-$$`cov(X,Y) = \dfrac{\sum_{i=1}^{n} (X_i - \bar{X}) (Y_i - \bar{Y})}{(n - 1)}`$$
+$`cov(X,Y) = \dfrac{\sum_{i=1}^{n} (X_i - \bar{X}) (Y_i - \bar{Y})}{(n - 1)}`$
 
 The covariance matrix looks like the following:
 
-$$`C = \begin{pmatrix}
+$`C = \begin{pmatrix}
 cov(x,x) & cov(x,y) & cov(x,z)\\
 cov(y,x) & cov(y,y) & cov(y,z) \\
 cov(z,x) & cov(z,y) & cov(z,z)
-\end{pmatrix}`$$
+\end{pmatrix}`$
 
 
 ### Method
