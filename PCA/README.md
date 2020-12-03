@@ -8,7 +8,7 @@ Principal Component Analysis (PCA) is a method for reducing dimension of data. A
 
 ### Eigenvalues and eigenvectors
 
-A vector $v$ is an eigenvector of A if transformation of the vector ($Av$) are in the same direction. Thus obtained vector is just the scaled version of the input vector. This scaling factor, $'`lambda`$ is the eigenvalue of A.
+A vector $v$ is an eigenvector of A if transformation of the vector ($Av$) are in the same direction. Thus obtained vector is just the scaled version of the input vector. This scaling factor, $`lambda`$ is the eigenvalue of A.
 
 Mathematically,
 $$`Av = \lambda v`$$
