@@ -139,6 +139,10 @@ Result of simple SVM for randomly generated classes:
 
 <img src="res/SVM_simple2.png"  height="" >
 
+Result of Simplified SMO:
+
+<img src="res/result.png"  height="" >
+
 ## Conclusion
 
 Although this program takes more time to train large data compared to SVC in sklearn, the accuracy obtained is almost similar. So there are lots of optimizations we can do to improve the performance. With this I got a decent understanding on Support vectors, SVM, how it can be used to classify, SMO, Kernel function, and multi-class classifier.
