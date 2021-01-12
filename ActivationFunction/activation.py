@@ -11,6 +11,21 @@ class activation:
         '''
         self.x = x
     
+    def activate(self, func):
+    '''Calls Activation function
+    :param func: activation function to activate. 
+                Available: sigmoid, tanh, ReLU and leakyReLU
+    '''
+        func = func.lower()
+        if func == "sigmoid":
+            return self.sigmoid()
+        if func == "tanh":
+            return self.tanh()
+        if func == "relu":
+            return self.ReLU()
+        if func == "leakyrelu":
+            return self.LeakyReLU()
+
     def sigmoid(self):
         '''Sigmod function
             f(x) = 1 / (1 + exp^(-x))
@@ -40,17 +55,14 @@ class activation:
 def main():
     x = np.random.randint(-10, 10, size=(10, 3))
     a = activation(x)
-    sig = a.sigmoid()
-    tanh = a.tanh()
-    ReLU = a.ReLU()
-    LeakyReLU = a.LeakyReLU()
+    
     print("Activation Functions")
     print('x:\n{} '.format(x))
     print('Sigmoid:\n{}\nTanh:\n{}\nReLU:\n{}\nLeakyReLU\n{}'.format(
-            sig,
-            tanh,
-            ReLU,
-            LeakyReLU
+            a.activate(func = "sigmoid"),
+            a.activate(func = "tanh"),
+            a.activate(func = "ReLU"),
+            a.activate(func = "leakyrelu")
         ))
 if __name__ == "__main__":
     main()
